@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package CoreService;
+
+import "transaction.proto";
+import "project.proto";
+import "nft.proto";
+import "order.proto";
+import "collection.proto";
+
+
+service CoreService {
+  rpc UpdateTransactionById(transaction.Request)
+      returns (transaction.Transaction) {}
+  rpc UpdateProjectById(project.Request) returns (project.Project) {}
+  rpc UpdateNftById(nft.Request) returns (nft.Nft) {}
+  rpc UpdateNftByTransactionId(nft.Request) returns (nft.Nft) {}
+  rpc UpdateBuyOrderById(order.Request) returns (order.Order){}
+  rpc UpdateCollectionById(collection.Request) returns (collection.Collection){}
+  rpc Ping(PingRequest) returns (PingResponse);
+}
+
+message PingRequest { string input = 1; }
+message PingResponse { string output = 1; }

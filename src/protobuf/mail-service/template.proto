@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package template;
+
+message Template {
+  string name = 1;
+  string file = 2;
+  string projectId = 3;
+  string secretKey = 4;
+}
+
+message TemplateUpdate {
+  required string id = 1;
+  optional string name = 2;
+  optional string file = 3;
+  required string projectId = 4;
+  required string secretKey = 5;
+}
+
+message TemplateWithId {
+  string id = 1;
+  string name = 2;
+  string filePath = 3;
+  string projectId = 4;
+}
+
+message TemplateId { required string id = 1; }

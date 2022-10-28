@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package nft;
+
+message Request {
+  string id = 1;
+  NftUpdate update = 2;
+}
+
+message Nft {
+  string id = 1;
+  string metadataId = 2;
+}
+
+message NftUpdate {
+  optional string status = 1;
+  optional string metadataId = 2;
+  optional string mintTxHash = 3;
+  optional string nftId = 4;
+  optional string owner = 5;
+  optional string chain = 6;
+}

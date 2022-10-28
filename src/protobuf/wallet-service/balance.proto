@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package balance;
+
+message BalanceInput {
+    string userId = 1;
+    string walletAddress = 2;
+}
+
+message Balance {
+    int32 balance = 1;
+}

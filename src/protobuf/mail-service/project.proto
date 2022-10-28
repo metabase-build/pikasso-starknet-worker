@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package project;
+
+message Project {
+  string name = 1;
+  string secretKey = 2;
+}
+
+message ProjectUpdate {
+  required string id = 1;
+  optional string name = 2;
+  required string secretKey = 3;
+}
+
+message ProjectWithId {
+  string id = 1;
+  string name = 2;
+  string secretKey = 3;
+}
+
+message ProjectId { required string id = 1; }

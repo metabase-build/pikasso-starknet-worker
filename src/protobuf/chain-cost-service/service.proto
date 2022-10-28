@@ -1,0 +1,14 @@
+syntax = "proto3";
+import "google/protobuf/any.proto";
+
+package ChainCost;
+
+import "native-token.proto";
+import "estimate-gas.proto";
+
+service ChainCost {
+    rpc GetTokenPrice(GetNativeTokenInput) returns (GetNativeTokenOutput){};
+    rpc GetPublicEstFee(GetPublicEstFeeInput)returns (GetPublicEstFeeOutput){};
+    rpc GetExecuteEstFee(GetExecuteEstGeeInput) returns (GetExecuteEstFeeOutput) {};
+}
+

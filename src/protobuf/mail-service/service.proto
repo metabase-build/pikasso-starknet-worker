@@ -1,0 +1,35 @@
+syntax = "proto3";
+import "google/protobuf/any.proto";
+
+package MailService;
+
+import "mail.proto";
+import "template.proto";
+import "provider.proto";
+import "project.proto";
+
+service MailService {
+  //  Mail
+  rpc sendMail(mail.payload) returns (mail.status) {}
+
+  // Template
+  rpc templateCreate(template.Template) returns (template.TemplateWithId) {}
+  rpc templateUpdate(template.TemplateUpdate)
+      returns (template.TemplateWithId) {}
+  rpc templateFindOneById(template.TemplateId)
+      returns (template.TemplateWithId) {}
+  rpc templateDelete(template.TemplateId) returns (template.TemplateWithId) {}
+
+  // Provider
+  rpc providerCreate(provider.Provider) returns (provider.ProviderWithId) {}
+  rpc providerUpdate(provider.ProviderUpdate)
+      returns (provider.ProviderWithId) {}
+  rpc providerFindOneById(provider.ProviderId)
+      returns (provider.ProviderWithId) {}
+
+  // Project
+  rpc projectCreate(project.Project) returns (project.ProjectWithId) {}
+  rpc projectUpdate(project.ProjectUpdate) returns (project.ProjectWithId) {}
+  rpc projectFindOneById(project.ProjectId) returns (project.ProjectWithId) {}
+  rpc projectDelete(project.ProjectId) returns (project.ProjectWithId) {}
+}

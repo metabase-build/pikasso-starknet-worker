@@ -1,0 +1,45 @@
+
+syntax = "proto3";
+
+package project;
+
+message Request {
+  string id = 1;
+  ProjectUpdate update = 2;
+}
+
+message Project {
+  string id = 1;
+  string name = 2;
+  optional string description = 3;
+  string chain = 4;
+  optional string masterAddress = 5;
+  optional string masterPrivateKey = 6;
+  optional string contract721Address = 7;
+  string l1Mnemonic = 8;
+  optional string image = 9;
+  optional string blockchain = 10;
+  optional string status = 11;
+  optional string apiSecret = 12;
+  optional string contract1155Address = 13;
+  optional string contractMarketplaceAddress = 14;
+  optional string webhook = 15;
+}
+
+message ProjectUpdate {
+  optional string id = 1;
+  optional string name = 2;
+  optional string description = 3;
+  optional string chain = 4;
+  optional string masterAddress = 5;
+  optional string masterPrivateKey = 6;
+  optional string contract721Address = 7;
+  optional string l1Mnemonic = 8;
+  optional string image = 9;
+  optional string blockchain = 10;
+  optional string status = 11;
+  optional string apiSecret = 12;
+  optional string contract1155Address = 13;
+  optional string contractMarketplaceAddress = 14;
+  optional string webhook = 15;
+}

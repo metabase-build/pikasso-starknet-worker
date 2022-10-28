@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package deposit;
+
+message DepositInput {
+    string walletAddress = 1;
+    int32 amount = 2;
+    string currency = 3;
+    string details = 4;
+    string userId = 5;
+}
+
+message DepositResponse {
+    int32 status = 1;
+    repeated string error = 2;
+}

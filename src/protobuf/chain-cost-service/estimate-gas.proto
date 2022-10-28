@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package estimateGas;
+
+message GetPublicEstFeeInput {
+    string chain = 1;
+    repeated string nftUrls = 2;
+    repeated int32 amounts = 3;
+    collectionProperties collection = 4;
+    string tokenProvider = 5;
+}
+
+message GetPublicEstFeeOutput {
+    float nativeTokenPrice = 1;
+    optional estimateGas deployGas = 2;
+    optional estimateGas mintGas = 3;
+}
+
+message GetExecuteEstGeeInput {
+    collectionProperties collection = 1;
+    string functionName = 2;
+    repeated string inputs = 3;
+    string tokenProvider = 4;
+}
+
+message GetExecuteEstFeeOutput {
+    float nativeTokenPrice = 1;
+    optional estimateGas executeGas = 2;
+}
+
+
+//////////
+message collectionProperties {
+    string status = 1;
+    optional string privateKey = 2;
+    optional string publicKey = 3;
+    optional string nftContractAddress = 4;
+    string nftType = 5;
+    optional string chain = 6;
+}
+
+message estimateGas {
+    string unitGas = 1;
+    string gasPrice = 2;
+    string wei = 3;
+    string eth = 4;
+    string usd = 5;
+    string extraWei = 6;
+    string extraUsd = 7;
+}

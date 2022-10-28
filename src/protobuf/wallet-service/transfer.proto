@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package transfer;
+
+message TransferInput {
+    string fromAddress = 1;
+    string toAddress = 2;
+    int32 amount = 3;
+    string currency = 4;
+    string details = 5;
+    string userId = 6;
+}
+
+message TransferResponse {
+    int32 status = 1;
+    repeated string error = 2;
+}

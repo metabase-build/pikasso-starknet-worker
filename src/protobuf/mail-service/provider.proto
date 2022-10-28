@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package provider;
+
+message Provider {
+  string config = 1;
+  string name = 2;
+}
+
+message ProviderUpdate {
+  required string id = 1;
+  optional string config = 2;
+  optional string name = 3;
+}
+
+message ProviderWithId {
+  string id = 1;
+  string config = 2;
+  string name = 3;
+  string deleted = 4;
+}
+
+message ProviderId { required string id = 1; }

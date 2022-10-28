@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package WalletService;
+
+import "wallet.proto";
+import "balance.proto";
+import "deposit.proto";
+import "transfer.proto";
+
+
+service WalletService{
+    rpc CreateWallet (WalletInput) returns (Wallet) {}
+    rpc GetBalance (BalanceInput) returns (Balance){}
+    rpc DepositWallet(DepositInput) returns (DepositResponse){}
+    rpc TransferFund(TransferInput) returns (TransferResponse){}
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package order;
+
+message Request {
+  string userId = 1;
+  string walletAddress = 2;
+  string assetAmount = 3;
+  string buyerSignature = 4;
+  string contractAddress = 5;
+  string type = 6;
+  string askNftAmount =7;
+  string status = 8;
+}
+
+message Order {
+  string id = 1;
+  string metadataId = 2;
+}
+
+message OrderUpdate {
+ optional string id = 1;
+ optional string metadataId = 2;
+}

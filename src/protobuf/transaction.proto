@@ -1,0 +1,30 @@
+
+syntax = "proto3";
+
+package transaction;
+
+message Request {
+  string id = 1;
+  TransactionUpdate update = 2;
+}
+
+message Transaction {
+  string id = 1;
+  string status = 2;
+  string project = 3;
+}
+
+message TransactionUpdate {
+  optional int32 retry = 1;
+  optional string status = 2;
+  optional string error = 3;
+  optional paymentDetailMess paymentDetail = 4;
+  optional string onChainTxHash = 5;
+}
+
+message paymentDetailMess{
+  optional string estDeployGas = 1;
+  optional string estMintGas = 2;
+  optional string transactionFee =3;
+  optional string estWithdrawGas =4;
+}
